@@ -36,6 +36,8 @@ public class DBlocks {
 	public static final RegistryObject<CushionBlock> BROWN_CUSHION = HELPER.createBlock("brown_cushion", () -> new CushionBlock(Properties.copy(Blocks.BROWN_WOOL)), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<CushionBlock> GREEN_CUSHION = HELPER.createBlock("green_cushion", () -> new CushionBlock(Properties.copy(Blocks.GREEN_WOOL)), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<CushionBlock> RED_CUSHION = HELPER.createBlock("red_cushion", () -> new CushionBlock(Properties.copy(Blocks.RED_WOOL)), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<StoolBlock> STOOL = HELPER.createBlock("stool", () -> new StoolBlock(Properties.copy(Blocks.OAK_PLANKS)), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<ChairBlock> CHAIR = HELPER.createBlock("chair", () -> new ChairBlock(Properties.copy(Blocks.OAK_PLANKS)), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<CushionBlock> BLACK_CUSHION = HELPER.createBlock("black_cushion", () -> new CushionBlock(Properties.copy(Blocks.BLACK_WOOL)), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<CouchBlock> WHITE_COUCH = HELPER.createBlock("white_couch", () -> new CouchBlock(Properties.copy(Blocks.OAK_PLANKS)), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<CouchBlock> ORANGE_COUCH = HELPER.createBlock("orange_couch", () -> new CouchBlock(Properties.copy(Blocks.OAK_PLANKS)), CreativeModeTab.TAB_DECORATIONS);
@@ -53,8 +55,6 @@ public class DBlocks {
 	public static final RegistryObject<CouchBlock> GREEN_COUCH = HELPER.createBlock("green_couch", () -> new CouchBlock(Properties.copy(Blocks.OAK_PLANKS)), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<CouchBlock> RED_COUCH = HELPER.createBlock("red_couch", () -> new CouchBlock(Properties.copy(Blocks.OAK_PLANKS)), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<CouchBlock> BLACK_COUCH = HELPER.createBlock("black_couch", () -> new CouchBlock(Properties.copy(Blocks.OAK_PLANKS)), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<StoolBlock> STOOL = HELPER.createBlock("stool", () -> new StoolBlock(Properties.copy(Blocks.OAK_PLANKS)), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<ChairBlock> CHAIR = HELPER.createBlock("chair", () -> new ChairBlock(Properties.copy(Blocks.OAK_PLANKS)), CreativeModeTab.TAB_DECORATIONS);
 
 
 	// Stool Variants
