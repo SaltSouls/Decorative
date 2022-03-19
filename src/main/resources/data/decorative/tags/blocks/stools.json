@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "decorative:stool",
+    "decorative:black_cushioned_stool",
+    "decorative:blue_cushioned_stool",
+    "decorative:brown_cushioned_stool",
+    "decorative:cyan_cushioned_stool",
+    "decorative:gray_cushioned_stool",
+    "decorative:green_cushioned_stool",
+    "decorative:light_blue_cushioned_stool",
+    "decorative:light_gray_cushioned_stool",
+    "decorative:lime_cushioned_stool",
+    "decorative:magenta_cushioned_stool",
+    "decorative:orange_cushioned_stool",
+    "decorative:pink_cushioned_stool",
+    "decorative:purple_cushioned_stool",
+    "decorative:red_cushioned_stool",
+    "decorative:white_cushioned_stool",
+    "decorative:yellow_cushioned_stool"
+  ]
+}

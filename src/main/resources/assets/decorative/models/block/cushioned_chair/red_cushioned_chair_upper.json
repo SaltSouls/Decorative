@@ -1,0 +1,9 @@
+{
+	"creator": "TwinSouls",
+	"parent": "decorative:block/cushioned_chair_upper_all",
+	"textures": {
+		"particle": "#base",
+		"back": "decorative:block/cushioned_chair/red_cushioned_chair_back",
+		"base": "decorative:block/cushioned_chair/cushioned_chair_wood"
+	}
+}

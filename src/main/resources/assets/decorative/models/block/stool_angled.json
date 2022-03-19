@@ -1,0 +1,27 @@
+{
+	"credit": "Made with Blockbench",
+	"creator": "TwinSouls",
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "#side",
+		"top": "decorative:block/stool_top",
+		"side": "decorative:block/stool_side",
+		"bottom": "decorative:block/stool_bottom"
+	},
+	"elements": [
+		{
+			"name": "stool",
+			"from": [3, 0, 3],
+			"to": [13, 12, 13],
+			"rotation": {"angle": -45, "axis": "y", "origin": [8, 6, 8]},
+			"faces": {
+				"north": {"uv": [3, 4, 13, 16], "texture": "#side"},
+				"east": {"uv": [3, 4, 13, 16], "texture": "#side"},
+				"south": {"uv": [3, 4, 13, 16], "texture": "#side"},
+				"west": {"uv": [3, 4, 13, 16], "texture": "#side"},
+				"up": {"uv": [3, 3, 13, 13], "texture": "#top"},
+				"down": {"uv": [3, 3, 13, 13], "texture": "#bottom", "cullface": "down"}
+			}
+		}
+	]
+}

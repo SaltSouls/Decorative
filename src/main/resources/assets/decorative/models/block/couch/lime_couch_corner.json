@@ -1,0 +1,12 @@
+{
+  "creator": "TwinSouls",
+  "parent": "decorative:block/couch_all_corner",
+  "textures": {
+    "particle": "#front",
+    "top": "decorative:block/couch/lime_couch_corner_top",
+    "front": "decorative:block/couch/lime_couch_corner_front",
+    "side": "decorative:block/couch/lime_couch_side",
+    "back": "decorative:block/couch/lime_couch_corner_back",
+    "bottom": "decorative:block/couch/couch_corner_bottom"
+  }
+}

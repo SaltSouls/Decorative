@@ -1,0 +1,36 @@
+{
+	"credit": "Made with Blockbench",
+	"creator": "TwinSouls",
+	"textures": {
+		"particle": "#front",
+		"top": "#top",
+		"front": "#front",
+		"back": "#back",
+		"bottom": "#bottom"
+	},
+	"elements": [
+		{
+			"name": "back",
+			"from": [0, 0, 11],
+			"to": [16, 15, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [0, 1, 16, 16], "texture": "#front"},
+				"south": {"uv": [0, 1, 16, 16], "texture": "#back", "cullface": "south"},
+				"up": {"uv": [0, 11, 16, 16], "texture": "#top"},
+				"down": {"uv": [16, 0, 0, 5], "texture": "#bottom", "cullface": "down"}
+			}
+		},
+		{
+			"name": "seat",
+			"from": [0, 0, 1],
+			"to": [16, 6, 11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [0, 10, 16, 16], "texture": "#front"},
+				"up": {"uv": [0, 1, 16, 11], "texture": "#top"},
+				"down": {"uv": [16, 5, 0, 15], "texture": "#bottom", "cullface": "down"}
+			}
+		}
+	]
+}

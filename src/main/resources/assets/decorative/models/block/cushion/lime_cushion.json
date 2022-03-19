@@ -1,0 +1,8 @@
+{
+	"creator": "TwinSouls",
+	"parent": "decorative:block/cushion_all",
+	"textures": {
+		"main": "decorative:block/cushion/lime_cushion",
+		"bottom": "decorative:block/cushion/lime_cushion_bottom"
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"creator": "TwinSouls",
+	"parent": "decorative:block/cushioned_stool_all",
+	"textures": {
+		"particle": "decorative:block/stool_side",
+		"cushion": "decorative:block/cushion/magenta_cushion",
+		"side": "decorative:block/stool_side",
+		"bottom": "decorative:block/stool_bottom"
+	}
+}

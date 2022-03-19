@@ -1,0 +1,39 @@
+modLoader = "javafml"
+loaderVersion = "[32,)"
+issueTrackerURL = ""
+license = "https://github.com/team-abnormals/template-mod/blob/main/LICENSE.txt"
+
+[[mods]]
+    modId = "decorative"
+    version = "${file.jarVersion}"
+    logoFile = "logo.png"
+    itemIcon = "minecraft:dirt"
+    configBackground = "minecraft:textures/block/dirt.png"
+    authors = "Team Abnormals"
+    credits = "bageldotjpg, TwinSouls, MrCrayfish"
+    displayURL = "https://www.teamabnormals.com/mods/template-mod"
+    displayName = "Decorative"
+    description = '''
+    Template description.
+    '''
+
+[[dependencies.decorative]]
+    modId = "minecraft"
+    mandatory = true
+    versionRange = "[1.18.1,1.19)"
+    ordering = "NONE"
+    side = "BOTH"
+
+[[dependencies.decorative]]
+    modId = "forge"
+    mandatory = true
+    versionRange = "[39.0.0,)"
+    ordering = "NONE"
+    side = "BOTH"
+
+[[dependencies.decorative]]
+    modId = "blueprint"
+    mandatory = true
+    versionRange = "[5.0.0,)"
+    ordering = "AFTER"
+    side = "BOTH"

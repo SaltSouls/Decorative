@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=north,half=lower": {
+      "model": "decorative:block/cushioned_chair/green_cushioned_chair_lower"
+    },
+    "facing=north,half=upper": {
+      "model": "decorative:block/cushioned_chair/green_cushioned_chair_upper"
+    },
+    "facing=south,half=lower": {
+      "model": "decorative:block/cushioned_chair/green_cushioned_chair_lower",
+      "y": 180
+    },
+    "facing=south,half=upper": {
+      "model": "decorative:block/cushioned_chair/green_cushioned_chair_upper",
+      "y": 180
+    },
+    "facing=east,half=lower": {
+      "model": "decorative:block/cushioned_chair/green_cushioned_chair_lower",
+      "y": 90
+    },
+    "facing=east,half=upper": {
+      "model": "decorative:block/cushioned_chair/green_cushioned_chair_upper",
+      "y": 90
+    },
+    "facing=west,half=lower": {
+      "model": "decorative:block/cushioned_chair/green_cushioned_chair_lower",
+      "y": 270
+    },
+    "facing=west,half=upper": {
+      "model": "decorative:block/cushioned_chair/green_cushioned_chair_upper",
+      "y": 270
+    }
+  }
+}

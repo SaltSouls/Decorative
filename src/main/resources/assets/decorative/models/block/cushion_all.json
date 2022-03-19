@@ -1,0 +1,58 @@
+{
+	"credit": "Made with Blockbench",
+	"creator": "TwinSouls",
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "#main",
+		"main": "#main",
+		"bottom": "#bottom"
+	},
+	"elements": [
+		{
+			"name": "cushion",
+			"from": [3, 0, 3],
+			"to": [13, 4, 13],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 2, 8]},
+			"faces": {
+				"north": {"uv": [3, 11, 13, 15], "texture": "#main"},
+				"east": {"uv": [3, 11, 13, 15], "texture": "#main"},
+				"south": {"uv": [3, 11, 13, 15], "texture": "#main"},
+				"west": {"uv": [3, 11, 13, 15], "texture": "#main"},
+				"up": {"uv": [3, 1, 13, 11], "texture": "#main"},
+				"down": {"uv": [3, 3, 13, 13], "texture": "#bottom", "cullface": "down"}
+			}
+		}
+	],
+	"gui_light": "side",
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, 45, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, 225, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"ground": {
+			"translation": [0, 3, 0],
+			"scale": [0.25, 0.25, 0.25]
+		},
+		"gui": {
+			"rotation": [30, 225, 0],
+			"scale": [0.625, 0.625, 0.625]
+		},
+		"fixed": {
+			"scale": [0.5, 0.5, 0.5]
+		}
+	}
+}

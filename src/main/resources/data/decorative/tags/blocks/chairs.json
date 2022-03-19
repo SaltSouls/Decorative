@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "decorative:chair",
+    "decorative:black_cushioned_chair",
+    "decorative:blue_cushioned_chair",
+    "decorative:brown_cushioned_chair",
+    "decorative:cyan_cushioned_chair",
+    "decorative:gray_cushioned_chair",
+    "decorative:green_cushioned_chair",
+    "decorative:light_blue_cushioned_chair",
+    "decorative:light_gray_cushioned_chair",
+    "decorative:lime_cushioned_chair",
+    "decorative:magenta_cushioned_chair",
+    "decorative:orange_cushioned_chair",
+    "decorative:pink_cushioned_chair",
+    "decorative:purple_cushioned_chair",
+    "decorative:red_cushioned_chair",
+    "decorative:white_cushioned_chair",
+    "decorative:yellow_cushioned_chair"
+  ]
+}

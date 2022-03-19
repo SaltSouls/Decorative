@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "com.teamabnormals.decorative.core.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "minVersion": "0.8",
+  "refmap": "decorative.refmap.json",
+  "mixins": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

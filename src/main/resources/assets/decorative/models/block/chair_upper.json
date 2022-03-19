@@ -1,0 +1,52 @@
+{
+	"credit": "Made with Blockbench",
+	"creator": "TwinSouls",
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "#back",
+		"back": "decorative:block/chair_back"
+	},
+	"groups": [
+		{
+			"name": "back",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"children": [0, 1, 2]
+		}
+	],
+	"elements": [
+		{
+			"name": "main",
+			"from": [5, 0, 12],
+			"to": [11, 4, 12],
+			"faces": {
+				"north": {"uv": [4, 2, 10, 6], "texture": "#back"},
+				"south": {"uv": [4, 2, 10, 6], "texture": "#back"}
+			}
+		},
+		{
+			"name": "left_beam",
+			"from": [11, 0, 11],
+			"to": [13, 4, 13],
+			"faces": {
+				"north": {"uv": [2, 2, 4, 6], "texture": "#back"},
+				"east": {"uv": [4, 2, 2, 6], "texture": "#back"},
+				"south": {"uv": [2, 2, 4, 6], "texture": "#back"},
+				"west": {"uv": [4, 2, 2, 6], "texture": "#back"},
+				"up": {"uv": [2, 0, 4, 2], "texture": "#back"}
+			}
+		},
+		{
+			"name": "right_beam",
+			"from": [3, 0, 11],
+			"to": [5, 4, 13],
+			"faces": {
+				"north": {"uv": [2, 2, 4, 6], "texture": "#back"},
+				"east": {"uv": [4, 2, 2, 6], "texture": "#back"},
+				"south": {"uv": [2, 2, 4, 6], "texture": "#back"},
+				"west": {"uv": [4, 2, 2, 6], "texture": "#back"},
+				"up": {"uv": [2, 0, 4, 2], "texture": "#back"}
+			}
+		}
+	]
+}

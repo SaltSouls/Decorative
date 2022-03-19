@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "decorative:black_cushion",
+    "decorative:blue_cushion",
+    "decorative:brown_cushion",
+    "decorative:cyan_cushion",
+    "decorative:gray_cushion",
+    "decorative:green_cushion",
+    "decorative:light_blue_cushion",
+    "decorative:light_gray_cushion",
+    "decorative:lime_cushion",
+    "decorative:magenta_cushion",
+    "decorative:orange_cushion",
+    "decorative:pink_cushion",
+    "decorative:purple_cushion",
+    "decorative:red_cushion",
+    "decorative:white_cushion",
+    "decorative:yellow_cushion"
+  ]
+}
