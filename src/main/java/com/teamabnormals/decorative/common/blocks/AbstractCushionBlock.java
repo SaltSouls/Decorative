@@ -54,7 +54,7 @@ public class AbstractCushionBlock extends Block implements SimpleWaterloggedBloc
         return state.setValue(ROTATION, value);
     }
 
-    //Waterlogged State
+    // Waterlogged State
     @Override
     public FluidState getFluidState(BlockState state) {
         return (Boolean)state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false): super.getFluidState(state);

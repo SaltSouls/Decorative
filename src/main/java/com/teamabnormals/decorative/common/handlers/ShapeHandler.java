@@ -31,23 +31,23 @@ public class ShapeHandler {
     }
 
     private static double[] adjustValues(Direction direction, double var1, double var2, double var3, double var4) {
-        switch(direction) {
-            case WEST:
+        switch (direction) {
+            case WEST -> {
                 double var_temp_1 = var1;
                 var1 = 1.0F - var3;
                 double var_temp_2 = var2;
                 var2 = 1.0F - var4;
                 var3 = 1.0F - var_temp_1;
                 var4 = 1.0F - var_temp_2;
-                break;
-            case NORTH:
+            }
+            case NORTH -> {
                 double var_temp_3 = var1;
                 var1 = var2;
                 var2 = 1.0F - var3;
                 var3 = var4;
                 var4 = 1.0F - var_temp_3;
-                break;
-            case SOUTH:
+            }
+            case SOUTH -> {
                 double var_temp_4 = var1;
                 var1 = 1.0F - var4;
                 double var_temp_5 = var2;
@@ -55,9 +55,9 @@ public class ShapeHandler {
                 double var_temp_6 = var3;
                 var3 = 1.0F - var_temp_5;
                 var4 = var_temp_6;
-                break;
-            default:
-                break;
+            }
+            default -> {
+            }
         }
         return new double[]{var1, var2, var3, var4};
     }

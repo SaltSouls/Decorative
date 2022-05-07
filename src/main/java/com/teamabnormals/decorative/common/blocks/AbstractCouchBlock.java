@@ -75,7 +75,7 @@ public class AbstractCouchBlock extends Block implements SimpleWaterloggedBlock 
         return state.setValue(FACING, direction);
     }
 
-    //Waterlogged State
+    // Waterlogged State
     @Override
     public FluidState getFluidState(BlockState state) {
         return (Boolean)state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false): super.getFluidState(state);
@@ -87,6 +87,7 @@ public class AbstractCouchBlock extends Block implements SimpleWaterloggedBlock 
         return false;
     }
 
+    // Couch Shapes
     public enum CouchShape implements StringRepresentable {
         SINGLE("single"),
         LEFT("left"),

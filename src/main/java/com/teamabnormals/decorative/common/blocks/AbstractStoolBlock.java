@@ -51,7 +51,7 @@ public class AbstractStoolBlock extends Block implements SimpleWaterloggedBlock 
         return state.setValue(ROTATION, value);
     }
 
-    //Waterlogged State
+    // Waterlogged State
     @Override
     public FluidState getFluidState(BlockState state) {
         return (Boolean)state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false): super.getFluidState(state);
