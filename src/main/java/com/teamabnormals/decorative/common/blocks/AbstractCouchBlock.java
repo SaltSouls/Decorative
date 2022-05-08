@@ -1,5 +1,6 @@
 package com.teamabnormals.decorative.common.blocks;
 
+import com.teamabnormals.decorative.util.Triple;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.StringRepresentable;
@@ -43,83 +44,90 @@ public class AbstractCouchBlock extends Block implements SimpleWaterloggedBlock 
     private BlockState getCouchState(BlockState state, LevelAccessor world, BlockPos pos, Direction dir) {
         Direction facing = state.getValue(FACING);
         CouchShape type = state.getValue(SHAPE);
-        boolean isLeft = this.isCouch(world, pos, dir.getCounterClockWise(), facing);
-        boolean isRight = this.isCouch(world, pos, dir.getClockWise(), facing);
-        boolean isCorner = type == CouchShape.CORNER_LEFT || type == CouchShape.CORNER_RIGHT;
-        boolean isCornerRight = isRight && isCorner;
-        boolean isCornerLeft = isLeft && isCorner;
         switch (facing) {
-            case SOUTH -> {
-                if (this.isCouch(world, pos, dir, Direction.EAST)) {
-                    return state.setValue(SHAPE, CouchShape.CORNER_LEFT);
-                } else if (this.isCouch(world, pos, dir, Direction.WEST)) {
-                    return state.setValue(SHAPE, CouchShape.CORNER_RIGHT);
-                } else if (isLeft && !isRight) {
-                    return state.setValue(SHAPE, CouchShape.LEFT);
-                } else if (isRight && !isLeft) {
-                    return state.setValue(SHAPE, CouchShape.RIGHT);
-                } else if (isLeft && isRight) {
+            case NORTH:
+            case SOUTH:
+                Triple<Boolean, CouchShape, Direction> isLeftX = this.isCouchSide(world, pos, Direction.Axis.X, 1);
+                Triple<Boolean, CouchShape, Direction> isRightX = this.isCouchSide(world, pos, Direction.Axis.X, -1);
+                if (isLeftX.getA() && isRightX.getA()) {
                     return state.setValue(SHAPE, CouchShape.MIDDLE);
+                } else if (dir == Direction.NORTH) {
+                     Triple<Boolean, CouchShape, Direction> shouldCurve = this.isCouchSide(world, pos, Direction.Axis.Z, -1);
+                     if (shouldCurve.getA()) {
+                        if (shouldCurve.getC() == Direction.EAST) {
+                            return state.setValue(SHAPE, CouchShape.CORNER_RIGHT);
+                        } else {
+                            return state.setValue(SHAPE, CouchShape.CORNER_LEFT);
+                        }
+                     } else if (isLeftX.getA() && !isRightX.getA()) {
+                        return state.setValue(SHAPE, CouchShape.RIGHT);
+                    } else if (!isLeftX.getA() && isRightX.getA()) {
+                        return state.setValue(SHAPE, CouchShape.LEFT);
+                    }
+                } else if (dir == Direction.SOUTH) {
+                    Triple<Boolean, CouchShape, Direction> shouldCurve = this.isCouchSide(world, pos, Direction.Axis.Z, 1);
+                    if (shouldCurve.getA()) {
+                        if (shouldCurve.getC() == Direction.WEST) {
+                            return state.setValue(SHAPE, CouchShape.CORNER_RIGHT);
+                        } else {
+                            return state.setValue(SHAPE, CouchShape.CORNER_LEFT);
+                        }
+                    } else if (isLeftX.getA() && !isRightX.getA()) {
+                        return state.setValue(SHAPE, CouchShape.LEFT);
+                    } else if (!isLeftX.getA() && isRightX.getA()) {
+                        return state.setValue(SHAPE, CouchShape.RIGHT);
+                    }
+                } else {
+                return state.setValue(SHAPE, CouchShape.SINGLE);
+            }
+            case EAST:
+            case WEST:
+                Triple<Boolean, CouchShape, Direction> isLeftY = this.isCouchSide(world, pos, Direction.Axis.Z, 1);
+                Triple<Boolean, CouchShape, Direction> isRightY = this.isCouchSide(world, pos, Direction.Axis.Z, -1);
+                if (isLeftY.getA() && isRightY.getA()) {
+                    return state.setValue(SHAPE, CouchShape.MIDDLE);
+                } else if (dir == Direction.EAST) {
+                    Triple<Boolean, CouchShape, Direction> shouldCurve = this.isCouchSide(world, pos, Direction.Axis.X, 1);
+                    if (shouldCurve.getA()) {
+                        if (shouldCurve.getC() == Direction.SOUTH) {
+                            return state.setValue(SHAPE, CouchShape.CORNER_RIGHT);
+                        } else {
+                            return state.setValue(SHAPE, CouchShape.CORNER_LEFT);
+                        }
+                    } else if (isLeftY.getA() && !isRightY.getA()) {
+                        return state.setValue(SHAPE, CouchShape.RIGHT);
+                    } else if (!isLeftY.getA() && isRightY.getA()) {
+                        return state.setValue(SHAPE, CouchShape.LEFT);
+                    }
+                } else if (dir == Direction.WEST) {
+                    Triple<Boolean, CouchShape, Direction> shouldCurve = this.isCouchSide(world, pos, Direction.Axis.X, -1);
+                    if (shouldCurve.getA()) {
+                        if (shouldCurve.getC() == Direction.NORTH) {
+                            return state.setValue(SHAPE, CouchShape.CORNER_RIGHT);
+                        } else {
+                            return state.setValue(SHAPE, CouchShape.CORNER_LEFT);
+                        }
+                    } else if (isLeftY.getA() && !isRightY.getA()) {
+                        return state.setValue(SHAPE, CouchShape.LEFT);
+                    } else if (!isLeftY.getA() && isRightY.getA()) {
+                        return state.setValue(SHAPE, CouchShape.RIGHT);
+                    }
                 } else {
                     return state.setValue(SHAPE, CouchShape.SINGLE);
                 }
-            }
-            case EAST -> {
-                if (this.isCouch(world, pos, dir, Direction.NORTH)) {
-                    return state.setValue(SHAPE, CouchShape.CORNER_LEFT);
-                } else if (this.isCouch(world, pos, dir, Direction.SOUTH)) {
-                    return state.setValue(SHAPE, CouchShape.CORNER_RIGHT);
-                } else if (isLeft && !isRight) {
-                    return state.setValue(SHAPE, CouchShape.LEFT);
-                } else if (isRight && !isLeft) {
-                    return state.setValue(SHAPE, CouchShape.RIGHT);
-                } else if (isLeft && isRight) {
-                    return state.setValue(SHAPE, CouchShape.MIDDLE);
-                } else {
-                    return state.setValue(SHAPE, CouchShape.SINGLE);
-                }
-            }
-            case WEST -> {
-                if (this.isCouch(world, pos, dir, Direction.SOUTH)) {
-                    return state.setValue(SHAPE, CouchShape.CORNER_LEFT);
-                } else if (this.isCouch(world, pos, dir, Direction.NORTH)) {
-                    return state.setValue(SHAPE, CouchShape.CORNER_RIGHT);
-                } else if (isLeft && !isRight) {
-                    return state.setValue(SHAPE, CouchShape.LEFT);
-                } else if (isRight && !isLeft) {
-                    return state.setValue(SHAPE, CouchShape.RIGHT);
-                } else if (isLeft && isRight) {
-                    return state.setValue(SHAPE, CouchShape.MIDDLE);
-                } else {
-                    return state.setValue(SHAPE, CouchShape.SINGLE);
-                }
-            }
-            default -> {
-                if (this.isCouch(world, pos, dir, Direction.WEST)) {
-                    return state.setValue(SHAPE, CouchShape.CORNER_LEFT);
-                } else if (this.isCouch(world, pos, dir, Direction.EAST)) {
-                    return state.setValue(SHAPE, CouchShape.CORNER_RIGHT);
-                } else if (isLeft && !isRight) {
-                    return state.setValue(SHAPE, CouchShape.LEFT);
-                } else if (isRight && !isLeft) {
-                    return state.setValue(SHAPE, CouchShape.RIGHT);
-                } else if (isLeft && isRight) {
-                    return state.setValue(SHAPE, CouchShape.MIDDLE);
-                }  else {
-                    return state.setValue(SHAPE, CouchShape.SINGLE);
-                }
-            }
         }
+        return state.setValue(SHAPE, CouchShape.SINGLE);
     }
 
-    private boolean isCouch(LevelAccessor world, BlockPos pos, Direction direction, Direction targetDirection) {
-        BlockState state = world.getBlockState(pos.relative(direction));
+    private Triple<Boolean, CouchShape, Direction> isCouchSide(LevelAccessor world, BlockPos pos, Direction.Axis relativeAxis, int step) {
+        BlockState state = world.getBlockState(pos.relative(relativeAxis, step));
         if(state.getBlock() == this) {
-            Direction couchFacing = state.getValue(FACING);
-            return couchFacing.equals(targetDirection);
+            return new Triple(true, state.getValue(SHAPE), state.getValue(FACING));
         }
-        return false;
+        return new Triple(false, CouchShape.SINGLE, Direction.NORTH);
     }
+
+
     @Override
     public BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor world, BlockPos currentPos, BlockPos facingPos) {
         return this.getCouchState(state, world, currentPos, state.getValue(FACING));
