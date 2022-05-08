@@ -35,8 +35,10 @@ public class AbstractCouchBlock extends Block implements SimpleWaterloggedBlock 
     @Nullable
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext ctx) {
+        FluidState fluidstate = ctx.getLevel().getFluidState(ctx.getClickedPos());
+        boolean flag = fluidstate.getType() == Fluids.WATER;
         BlockState state = super.getStateForPlacement(ctx);
-        return this.getCouchState(state, ctx.getLevel(), ctx.getClickedPos(), state.getValue(FACING));
+        return this.getCouchState(state.setValue(WATERLOGGED, flag).setValue(FACING, ctx.getHorizontalDirection().getOpposite()), ctx.getLevel(), ctx.getClickedPos(), state.getValue(FACING));
     }
     private BlockState getCouchState(BlockState state, LevelAccessor world, BlockPos pos, Direction dir) {
         boolean left = this.isCouch(world, pos, dir.getCounterClockWise(), dir) || this.isCouch(world, pos, dir.getCounterClockWise(), dir.getCounterClockWise());
@@ -47,10 +49,52 @@ public class AbstractCouchBlock extends Block implements SimpleWaterloggedBlock 
         if(cornerLeft) { return state.setValue(SHAPE, CouchShape.CORNER_LEFT); }
         else if(cornerRight) { return state.setValue(SHAPE, CouchShape.CORNER_RIGHT); }
         else if(left && right) { return state.setValue(SHAPE, CouchShape.MIDDLE); }
-        else if(left) { return state.setValue(SHAPE, CouchShape.RIGHT); }
-        else if(right) { return state.setValue(SHAPE, CouchShape.LEFT); }
+        else if(right) { return state.setValue(SHAPE, CouchShape.RIGHT); }
+        else if(left) { return state.setValue(SHAPE, CouchShape.LEFT); }
         return state.setValue(SHAPE, CouchShape.SINGLE);
     }
+
+//    private BlockState getCouchState(BlockState state, LevelAccessor world, BlockPos pos, Direction dir) {
+//        Direction facing = state.getValue(FACING);
+//        CouchShape type = state.getValue(SHAPE);
+//        switch (type) {
+//            case LEFT -> {
+//                if (isCouch(world, pos, Direction.NORTH, dir)) {
+//
+//                    return state.setValue(SHAPE, CouchShape.LEFT);
+//                } else if (isCouch(world, pos, Direction.SOUTH, dir)) {
+//
+//                    return state.setValue(SHAPE, CouchShape.LEFT);
+//                } else if (isCouch(world, pos, Direction.EAST, dir)) {
+//
+//                    return state.setValue(SHAPE, CouchShape.LEFT);
+//                } else if (isCouch(world, pos, Direction.WEST, dir)) {
+//
+//                    return state.setValue(SHAPE, CouchShape.LEFT);
+//                }
+//            }
+//            case RIGHT -> {
+//
+//                return state.setValue(SHAPE, CouchShape.RIGHT);
+//            }
+//            case MIDDLE -> {
+//
+//                return state.setValue(SHAPE, CouchShape.MIDDLE);
+//            }
+//            case CORNER_LEFT -> {
+//
+//                return state.setValue(SHAPE, CouchShape.CORNER_LEFT);
+//            }
+//            case CORNER_RIGHT -> {
+//
+//                return state.setValue(SHAPE, CouchShape.CORNER_RIGHT);
+//            }
+//            default -> {
+//                return state.setValue(SHAPE, CouchShape.SINGLE);
+//            }
+//        }
+//    }
+
     private boolean isCouch(LevelAccessor world, BlockPos pos, Direction direction, Direction targetDirection) {
         BlockState state = world.getBlockState(pos.relative(direction));
         if(state.getBlock() == this) {
