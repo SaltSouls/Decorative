@@ -69,6 +69,4 @@ public class StoolBlock extends AbstractStoolBlock {
         }
         return InteractionResult.PASS;
     }
-
-
 }

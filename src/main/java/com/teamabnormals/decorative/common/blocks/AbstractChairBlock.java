@@ -110,5 +110,4 @@ public class AbstractChairBlock extends Block implements SimpleWaterloggedBlock 
     public boolean isPathfindable(BlockState state, BlockGetter world, BlockPos pos, PathComputationType path) {
         return false;
     }
-
 }

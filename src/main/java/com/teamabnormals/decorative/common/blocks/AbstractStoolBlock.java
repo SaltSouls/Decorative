@@ -23,7 +23,7 @@ import javax.annotation.Nullable;
 public class AbstractStoolBlock extends Block implements SimpleWaterloggedBlock {
     // Block Properties
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-    public static final IntegerProperty ROTATION = DBlockStateProperties.PARTIAL_ROTATION;
+    public static final IntegerProperty ROTATION = DBlockStateProperties.ROTATION_0_7;
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(ROTATION, WATERLOGGED);
     }
@@ -62,6 +62,4 @@ public class AbstractStoolBlock extends Block implements SimpleWaterloggedBlock 
     public boolean isPathfindable(BlockState state, BlockGetter world, BlockPos pos, PathComputationType path) {
         return false;
     }
-
-
 }

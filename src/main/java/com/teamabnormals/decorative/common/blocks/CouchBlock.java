@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableBiMap;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.teamabnormals.decorative.common.handlers.ShapeHandler;
+import com.teamabnormals.decorative.common.property.DBlockStateProperties.SeatShape;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
@@ -18,7 +19,7 @@ public class CouchBlock extends AbstractCouchBlock {
 
     public CouchBlock(Properties properties) {
         super(properties);
-        this.registerDefaultState(this.getStateDefinition().any().setValue(FACING, Direction.NORTH).setValue(WATERLOGGED, false).setValue(SHAPE, CouchShape.SINGLE));
+        this.registerDefaultState(this.getStateDefinition().any().setValue(FACING, Direction.NORTH).setValue(WATERLOGGED, false).setValue(SHAPE, SeatShape.SINGLE));
         SHAPES = this.shapeConstructor(this.getStateDefinition().getPossibleStates());
     }
 
@@ -44,7 +45,7 @@ public class CouchBlock extends AbstractCouchBlock {
         ImmutableBiMap.Builder<BlockState, VoxelShape> shape = new ImmutableBiMap.Builder<>();
         for(BlockState state : states) {
             Direction facing = state.getValue(FACING);
-            CouchShape type = state.getValue(SHAPE);
+            SeatShape type = (SeatShape) state.getValue(SHAPE);
             List<VoxelShape> shapes = new ArrayList<>();
             switch (type) {
                 case SINGLE -> {
@@ -86,5 +87,4 @@ public class CouchBlock extends AbstractCouchBlock {
         }
         return shape.build();
     }
-
 }
