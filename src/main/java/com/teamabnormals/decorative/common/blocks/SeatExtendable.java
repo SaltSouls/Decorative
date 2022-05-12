@@ -22,10 +22,10 @@ public class SeatExtendable extends Block {
     public BlockState getSeatState(BlockState state, LevelAccessor world, BlockPos pos) {
         Direction direction = state.getValue(FACING);
         SeatShape type = state.getValue(SHAPE);
-        boolean isLeft = this.isCouchLeft(world, pos, direction);
-        boolean isRight = this.isCouchRight(world, pos, direction);
-        boolean isCornerLeft = this.isCouchCornerLeft(world, pos, direction);
-        boolean isCornerRight = this.isCouchCornerRight(world, pos, direction);
+        boolean isLeft = this.isSeatLeft(world, pos, direction);
+        boolean isRight = this.isSeatRight(world, pos, direction);
+        boolean isCornerLeft = this.isSeatCornerLeft(world, pos, direction);
+        boolean isCornerRight = this.isSeatCornerRight(world, pos, direction);
         if (isCornerLeft) { return state.setValue(SHAPE, SeatShape.CORNER_RIGHT); }
         else if (isCornerRight) { return state.setValue(SHAPE, SeatShape.CORNER_LEFT); }
         else if (isLeft && isRight) { return state.setValue(SHAPE, SeatShape.MIDDLE); }
@@ -38,7 +38,7 @@ public class SeatExtendable extends Block {
     public boolean isSeat(BlockState state) {
         return state.getBlock() == this;
     }
-    private boolean isCouchLeft(LevelAccessor world, BlockPos pos, Direction direction) {
+    private boolean isSeatLeft(LevelAccessor world, BlockPos pos, Direction direction) {
         switch(direction) {
             case NORTH -> {
                 BlockState isLeftN = world.getBlockState(pos.relative(Direction.Axis.X, 1));
@@ -71,7 +71,7 @@ public class SeatExtendable extends Block {
         }
         return false;
     }
-    private boolean isCouchCornerLeft(LevelAccessor world, BlockPos pos, Direction direction) {
+    private boolean isSeatCornerLeft(LevelAccessor world, BlockPos pos, Direction direction) {
         switch(direction) {
             case NORTH -> {
                 BlockState isFrontN = world.getBlockState(pos.relative(Direction.Axis.Z, -1));
@@ -104,7 +104,7 @@ public class SeatExtendable extends Block {
         }
         return false;
     }
-    private boolean isCouchRight(LevelAccessor world, BlockPos pos, Direction direction) {
+    private boolean isSeatRight(LevelAccessor world, BlockPos pos, Direction direction) {
         switch(direction) {
             case NORTH -> {
                 BlockState isRightN = world.getBlockState(pos.relative(Direction.Axis.X, -1));
@@ -137,7 +137,7 @@ public class SeatExtendable extends Block {
         }
         return false;
     }
-    private boolean isCouchCornerRight(LevelAccessor world, BlockPos pos, Direction direction) {
+    private boolean isSeatCornerRight(LevelAccessor world, BlockPos pos, Direction direction) {
         switch(direction) {
             case NORTH -> {
                 BlockState isFrontN = world.getBlockState(pos.relative(Direction.Axis.Z, -1));
