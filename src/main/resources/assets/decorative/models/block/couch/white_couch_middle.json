@@ -3,9 +3,9 @@
   "parent": "decorative:block/couch_all_middle",
   "textures": {
     "particle": "#front",
-    "top": "decorative:block/couch/white_couch_middle_top",
-    "front": "decorative:block/couch/white_couch_middle_front",
-    "back": "decorative:block/couch/white_couch_middle_back",
-    "bottom": "decorative:block/couch/couch_middle_bottom"
+		"top": "decorative:block/couch/white/middle_top",
+		"front": "decorative:block/couch/white/middle_front",
+		"back": "decorative:block/couch/white/middle_back",
+		"bottom": "decorative:block/couch/bottom"
   }
 }

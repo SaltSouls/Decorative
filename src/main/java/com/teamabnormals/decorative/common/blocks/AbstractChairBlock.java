@@ -37,12 +37,13 @@ public class AbstractChairBlock extends Block implements SimpleWaterloggedBlock 
     @Nullable
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext ctx) {
+        Direction direction = ctx.getHorizontalDirection();
+        BlockPos pos = ctx.getClickedPos();
         FluidState fluidState = ctx.getLevel().getFluidState(ctx.getClickedPos());
         boolean flag = fluidState.getType() == Fluids.WATER;
-        BlockPos blockpos = ctx.getClickedPos();
         Level level = ctx.getLevel();
-        if (blockpos.getY() < level.getMaxBuildHeight() - 1 && level.getBlockState(blockpos.above()).canBeReplaced(ctx)) {
-            return this.defaultBlockState().setValue(FACING, ctx.getHorizontalDirection().getOpposite()).setValue(WATERLOGGED, flag).setValue(HALF, DoubleBlockHalf.LOWER);
+        if (pos.getY() < level.getMaxBuildHeight() - 1 && level.getBlockState(pos.above()).canBeReplaced(ctx)) {
+            return this.defaultBlockState().setValue(FACING, direction.getOpposite()).setValue(WATERLOGGED, flag).setValue(HALF, DoubleBlockHalf.LOWER);
         } else {
             return null;
         }

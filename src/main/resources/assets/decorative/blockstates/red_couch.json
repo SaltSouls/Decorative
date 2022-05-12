@@ -1,0 +1,94 @@
+{
+    "variants": {
+      "facing=north,type=single": {
+        "model": "decorative:block/couch/red_couch_single"
+      },
+      "facing=north,type=left": {
+        "model": "decorative:block/couch/red_couch_left"
+      },
+      "facing=north,type=right": {
+        "model": "decorative:block/couch/red_couch_right"
+      },
+      "facing=north,type=middle": {
+        "model": "decorative:block/couch/red_couch_middle"
+      },
+      "facing=north,type=corner_left": {
+        "model": "decorative:block/couch/red_couch_corner"
+      },
+      "facing=north,type=corner_right": {
+        "model": "decorative:block/couch/red_couch_corner",
+        "y": 90
+      },
+      "facing=south,type=single": {
+        "model": "decorative:block/couch/red_couch_single",
+        "y": 180
+      },
+      "facing=south,type=left": {
+        "model": "decorative:block/couch/red_couch_left",
+        "y": 180
+      },
+      "facing=south,type=right": {
+        "model": "decorative:block/couch/red_couch_right",
+        "y": 180
+      },
+      "facing=south,type=middle": {
+        "model": "decorative:block/couch/red_couch_middle",
+        "y": 180
+      },
+      "facing=south,type=corner_left": {
+        "model": "decorative:block/couch/red_couch_corner",
+        "y": 180
+      },
+      "facing=south,type=corner_right": {
+        "model": "decorative:block/couch/red_couch_corner",
+        "y": 270
+      },
+      "facing=east,type=single": {
+        "model": "decorative:block/couch/red_couch_single",
+        "y": 90
+      },
+      "facing=east,type=left": {
+        "model": "decorative:block/couch/red_couch_left",
+        "y": 90
+      },
+      "facing=east,type=right": {
+        "model": "decorative:block/couch/red_couch_right",
+        "y": 90
+      },
+      "facing=east,type=middle": {
+        "model": "decorative:block/couch/red_couch_middle",
+        "y": 90
+      },
+      "facing=east,type=corner_left": {
+        "model": "decorative:block/couch/red_couch_corner",
+        "y": 90
+      },
+      "facing=east,type=corner_right": {
+        "model": "decorative:block/couch/red_couch_corner",
+        "y": 180
+      },
+      "facing=west,type=single": {
+        "model": "decorative:block/couch/red_couch_single",
+        "y": 270
+      },
+      "facing=west,type=left": {
+        "model": "decorative:block/couch/red_couch_left",
+        "y": 270
+      },
+      "facing=west,type=right": {
+        "model": "decorative:block/couch/red_couch_right",
+        "y": 270
+      },
+      "facing=west,type=middle": {
+        "model": "decorative:block/couch/red_couch_middle",
+        "y": 270
+      },
+      "facing=west,type=corner_left": {
+        "model": "decorative:block/couch/red_couch_corner",
+        "y": 270
+      },
+      "facing=west,type=corner_right": {
+        "model": "decorative:block/couch/red_couch_corner"
+      }
+    }
+  }

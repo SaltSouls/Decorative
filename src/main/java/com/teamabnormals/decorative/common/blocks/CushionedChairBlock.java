@@ -73,10 +73,10 @@ public class CushionedChairBlock extends AbstractChairBlock {
         }
         return collision.build();
     }
-    @SuppressWarnings({"NullableProblems", "deprecation"})
+
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) { return SHAPES.get(state); }
-    @SuppressWarnings({"NullableProblems", "deprecation"})
+
     @Override
     public VoxelShape getCollisionShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) { return COLLISION_SHAPES.get(state); }
 

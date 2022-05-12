@@ -3,10 +3,11 @@
   "parent": "decorative:block/couch_all_single",
   "textures": {
     "particle": "#front",
-    "top": "decorative:block/couch/pink_couch_single_top",
-    "front": "decorative:block/couch/pink_couch_single_front",
-    "side": "decorative:block/couch/pink_couch_side",
-    "back": "decorative:block/couch/pink_couch_single_back",
-    "bottom": "decorative:block/couch/pink_couch_single_bottom"
+		"top": "decorative:block/couch/pink/single_top",
+		"front": "decorative:block/couch/pink/single_front",
+		"side_outer": "decorative:block/couch/pink/side_outer",
+		"side_inner": "decorative:block/couch/pink/side_inner",
+		"back": "decorative:block/couch/pink/single_back",
+		"bottom": "decorative:block/couch/bottom"
   }
 }

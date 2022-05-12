@@ -2,11 +2,11 @@
   "creator": "TwinSouls",
   "parent": "decorative:block/couch_all_corner",
   "textures": {
-    "particle": "#front",
-    "top": "decorative:block/couch/magenta_couch_corner_top",
-    "front": "decorative:block/couch/magenta_couch_corner_front",
-    "side": "decorative:block/couch/magenta_couch_corner_side",
-    "back": "decorative:block/couch/magenta_couch_corner_back",
-    "bottom": "decorative:block/couch/couch_corner_bottom"
+    "particle": "#side_left",
+		"top": "decorative:block/couch/magenta/corner_top",
+		"side_left": "decorative:block/couch/magenta/corner_side_left",
+		"side_right": "decorative:block/couch/magenta/corner_side_right",
+		"back": "decorative:block/couch/magenta/middle_back",
+		"bottom": "decorative:block/couch/bottom"
   }
 }
